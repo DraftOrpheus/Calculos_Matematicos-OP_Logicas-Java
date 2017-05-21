@@ -1,0 +1,99 @@
+package Estoque;
+import java.util.Scanner;
+
+public class Estoque 
+{
+
+	public static int Diferenca(int x, int y) // diferença entre dois numeros
+	{	
+		if(x >= y)
+		{
+			return x - y;
+		}
+		else
+		return y - x;
+	}
+	public static int potencia(int valor ) //potenciação
+	{
+			return valor * valor;
+	}
+	public static String parimp (int valor) // par ou iimpar
+	{
+			if (valor /2 ==0)
+				return "par";
+			else
+			return "impar";
+	}
+	public static double squarey (double valor,double a,double b,double c) //função em desenvolvimento para o calculo de newtom raphson
+	{
+		valor= a*valor*valor -b*valor-c;	
+		return valor;
+	}
+	public static double squarex (double valor,double a,double b) //função em desenvolvimento para o calculo de newtom raphson
+	{
+		valor = -b/2*a;
+		return valor;
+	}
+	public static double delta (double valor,double a,double b,double c) // função para calculo do delta
+	{
+		valor = b*b -4*a*c;
+		return valor;
+	}
+	public static boolean gender (String gender) //Função para definir genero masculino e feminino
+	{
+		if(gender.equals("Mascuino")|| gender.equals("Male") || gender.equals("male") || gender.equals("masculino") || gender.equals("m") || gender.equals("M")){
+		return true;
+		}
+		else if(gender.equals("feminino")|| gender.equals("Feminino") || gender.equals("Female") || gender.equals("female") || gender.equals("f") || gender.equals("F"))
+		{
+		return true;
+		}
+		try
+		{
+			System.out.println("error");
+		}
+		catch (Exception e)
+		{
+			try {
+				throw new Exception("Digite novamente", e);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+		return false;
+	}
+	public static double temp1;
+	public static double temp2;
+	public static double limitex(double valor,double a, double b,double c) //Função para calculo de limites
+	{
+		valor = a;
+		temp1 = valor*valor-b;
+		temp2 = valor - c;
+	
+		return a;	
+	}
+	public static double DrvdFunction(double fx,double dfx, double b,double c ) //Função para calcuo de derivada de funções de primeira a terceiro grau
+	{
+		for(int i = 0; i <3;i++)
+		{
+			fx = fx*fx;
+		}
+		for (int i = 0; i<2;i++)
+		{
+			fx = fx*fx;
+		}	
+		
+		for(int i = 0; i <3;i++)
+		{
+			dfx = dfx*dfx;
+		}
+		for (int i = 0; i<2;i++)
+		{
+			dfx = dfx*dfx;
+		}
+		
+		if (fx<dfx) {return dfx = dfx - b * dfx + c;}
+	
+		else {return fx = fx - b * fx + c;} 
+	}
+}
